@@ -17,7 +17,7 @@ public class Function {
     public void serviceBusProcess(
      @ServiceBusQueueTrigger(name = "msgRest2FileInput",
                              queueName = "inbound2file",
-                             connection = "Endpoint=sb://ghtsp-demo01.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=9wTygq0UwoHVbcN8tvNVbrvTVuZ02xK2jcRN5U2eWKg=") String message,
+                             connection = "nteDemoSBConnection") String message,
      final ExecutionContext context
     ) {
      context.getLogger().info(message);

@@ -1,0 +1,12 @@
+{
+    "bindings": [
+        {
+        "queueName": "inbound2file",
+        "connection": "nteDemoSBConnection",
+        "name": "msgRest2FileInput",
+        "type": "serviceBusTrigger",
+        "direction": "in"
+        }
+    ],
+    "disabled": false
+    }
