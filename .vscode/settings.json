@@ -4,5 +4,6 @@
   "azureFunctions.templateFilter": "Verified",
   "azureFunctions.deploySubpath": "target/azure-functions/rest2file-demo-output/",
   "azureFunctions.preDeployTask": "package",
-  "debug.internalConsoleOptions": "neverOpen"
+  "debug.internalConsoleOptions": "neverOpen",
+  "java.configuration.updateBuildConfiguration": "interactive"
 }
