@@ -1,6 +1,7 @@
 package com.rest2file.function.output;
 
 import java.util.*;
+import java.util.UUID;
 
 import javax.activity.InvalidActivityException;
 import javax.management.relation.InvalidRoleValueException;
@@ -44,10 +45,14 @@ public class Function {
             // Get a reference to the directory you want to delete
             CloudFileDirectory containerDir = rootDir.getDirectoryReference("contact-demo");
             // Create File from SB Message
-            CloudFile rest2file = containerDir.getFileReference("message.json");
+            UUID uuid = UUID.randomUUID();
+            String randomUUIDString = uuid.toString();
+            CloudFile rest2file = containerDir.getFileReference(randomUUIDString+".json");
             rest2file.uploadFromByteArray(message.getBytes(),0,message.length());
         } catch ( Exception e)  {
         // Handle the exception
+            context.getLogger().warning("*** failed to write file to storage account: " + accountName);
+            context.getLogger().warning(e.getMessage());
         }
         
     }
